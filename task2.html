@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOGO Offer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #fffafc;
+            font-family: Arial, sans-serif;
+        }
+
+        .offer-box1 {
+            border: 1px solid #999999;
+            padding: 7px;
+            box-shadow: inset 0px 0px 1px rgb(61, 61, 61);
+            border-radius: 1px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .offer-box1.selected1 {
+            background-color: #FFF9FA;
+            border: 3px solid #ff6b95;
+        }
+
+        .offer-box2 {
+            border: 1px solid #999999;
+            padding: 7px;
+            box-shadow: inset 0px 0px 1px rgb(61, 61, 61);
+            border-radius: 1px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .offer-box2.selected2 {
+            background-color: #FFF9FA;
+            border: 3px solid #ff6b95;
+        }
+
+        .offer-box3 {
+            border: 1px solid #999999;
+            padding: 7px;
+            box-shadow: inset 0px 0px 1px rgb(61, 61, 61);
+            border-radius: 1px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .offer-box3.selected3 {
+            background-color: #FFF9FA;
+            border: 3px solid #ff6b95;
+        }
+
+
+        .badge-discount {
+            background-color: #ff6b95;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .most-popular {
+            position: absolute;
+            top: -12px;
+            right: 10px;
+            background-color: #ff6b95;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .hidden1,
+        .hidden2,
+        .hidden3 {
+            display: none;
+        }
+
+
+
+
+        .btn-add-to-cart {
+            background-color: #d63384;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #f4b5d5;
+        }
+
+        .bginfo {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .select-box {
+            margin: 0 5px;
+        }
+
+        .select-space {
+            display: flex;
+            align-items: end;
+            letter-spacing: 6px;
+        }
+
+        span.text {
+            margin-left: 30px;
+        }
+
+        select.form-select.d-inline {
+            width: 78%;
+        }
+
+        .unit-section {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        label.unit-section .chield-unit {
+            margin-right: 203px;
+            padding-top: 20px;
+        }
+
+        .chield-unit input {
+            margin-right: 17px;
+        }
+
+        .chield-unit2 {
+            padding-top: 10px;
+        }
+
+        .chield-unit2-p {
+            font-size: 12px;
+            text-decoration: line-through
+        }
+
+        @media (max-width: 768px) {
+
+            .offer-box1 {
+                border: 1px solid #999999;
+                padding: 1px;
+
+                box-shadow: inset 0px 0px 1px rgb(61, 61, 61);
+                border-radius: 3px;
+                margin-bottom: 5px;
+                position: relative;
+            }
+
+            .offer-box1.selected1 {
+                background-color: rgba(239, 194, 210, 0.2);
+                border: 1px solid #ff6b95;
+            }
+
+            .offer-box2 {
+                border: 1px solid #999999;
+                padding: 1px;
+                box-shadow: inset 0px 0px 1px rgb(61, 61, 61);
+                border-radius: 1px;
+                margin-bottom: 5px;
+                position: relative;
+            }
+
+            .offer-box2.selected2 {
+                background-color: rgba(239, 194, 210, 0.2);
+                border: 1px solid #ff6b95;
+            }
+
+            .offer-box3 {
+                border: 1px solid #999999;
+                padding: 1px;
+                box-shadow: inset 0px 0px 1px rgb(61, 61, 61);
+                border-radius: 1px;
+                margin-bottom: 5px;
+                position: relative;
+            }
+
+            .offer-box3.selected3 {
+                background-color: rgba(239, 194, 210, 0.2);
+                border: 1px solid #ff6b95;
+            }
+
+
+            .badge-discount {
+                background-color: #ff6b95;
+                color: white;
+                padding: 1px 1px;
+                border-radius: 1px;
+                font-size: 3px;
+            }
+
+            .most-popular {
+                position: absolute;
+                top: -6px;
+                right: 13px;
+                background-color: #ff6b95;
+                color: white;
+                padding: 1px 3px;
+                font-size: 8px;
+                border-radius: 2px;
+                font-weight: bold;
+            }
+
+            .hidden1,
+            .hidden2,
+            .hidden3 {
+                display: none;
+            }
+
+
+
+
+            .btn-add-to-cart {
+                background-color: #d63384;
+                color: white;
+                font-size: 15px;
+                padding: 4px;
+                border-radius: 3px;
+                border: none;
+                width: 100%;
+                cursor: pointer;
+            }
+
+            .btn-add-to-cart:hover {
+                background-color: #f4b5d5;
+            }
+
+            .bginfo {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            
+
+            .select-space {
+                display: flex;
+                align-items: end;
+                letter-spacing: 2px;
+            }
+
+            span.text {
+                margin-left: 3px;
+            }
+
+            select.form-select.d-inline {
+                width: 20%;
+            }
+
+            .unit-section {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            label.unit-section .chield-unit {
+                margin-right: 23px;
+                padding-top: 5px;
+                margin-left: 15px;
+            }
+
+            .chield-unit input {
+                margin-right: 7px;
+            }
+
+            .chield-unit2 {
+                padding-top: 5px;
+            }
+
+            .chield-unit2-p {
+                font-size: 7px;
+                text-decoration: line-through
+            }
+        }
+
+        .justify-content-right {
+            font-weight: 4000;
+            font-family: italic;
+        }
+
+        .opnn {
+            display: flex;
+            margin-left: 33px;
+        }
+        h3{
+            position: fixed;
+            top: 50px;
+            left: 41%;
+            background-color: #fffafc;
+            padding-right: 15px;
+            padding-left: 15px;
+            color: #FF6B82;
+        } 
+        
+    </style>
+
+</head>
+
+<body class="bg-dark">
+
+    <div class="container">
+        <div class="row p-2">
+            <div class="col-md-3"> </div>
+            <div class="col-md-6 bg-light mt-2  col-12" style="padding: 41px; border-radius:2px;">
+                <div class="container c1   ">
+                    <hr class="mb-5">
+                    <h3 class="text-center text-pink mb-4">YAY! It’s BOGO</h3>
+
+                    <div class="offer-box1 selected1 selected " id="unit1">
+                        <label class="unit-section">
+                            <div class="chield-unit">
+                                <input type="radio" name="unitOption" value="18"
+                                    onclick="updatePrice(event, 18, '1 Unit')">
+                                <strong>1 Unit</strong> <span class="badge-discount">10% Off</span>
+                                <span style="font-size: 12px;" class="opnn">Standard Price</span>
+                            </div>
+                            <div class="chield-unit2">
+                                <span class="float-end"> <strong>$10.00 USD</strong> </span>
+                                <p class="chield-unit2-p">$24.00 USD</p>
+                            </div>
+                        </label>
+
+
+                        <div class="hidden1 mt-1 row" id="sizeColorOptions1">
+                            <div class="col-md-1 col-1"></div>
+                            <div class="col-md-7 col-7 bginfo">
+                                <div class="col-md-6 col-6 select-box">
+                                    <span class="text">Size</span>
+                                    <div class="select-space">
+                                        <span>#1</span>
+                                        <select class="form-select d-inline">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="select-space mt-2">
+                                        <span>#2</span>
+                                        <select class="form-select d-inline">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6 select-box">
+                                    <span class="">Color</span>
+                                    <select class="form-select d-inline">
+                                        <option>Black</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                    </select>
+                                    <select class="form-select d-inline mt-2">
+                                        <option>Black</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6"></div>
+                        </div>
+                    </div>
+                    <!-- Unit 2 ------------------------------------------------------------------------------- -->
+
+                    <div class="offer-box2 selected2 selected" id="unit2">
+                        <label class="unit-section">
+                            <div class="chield-unit">
+                                <input type="radio" name="unitOption" value="19"
+                                    onclick="updatePrice(event, 19, '2 Unit')">
+                                <strong>2 Unit</strong> <span class="badge-discount">20% Off</span>
+                            </div>
+                            <div class="chield-unit2">
+                                <span class="float-end"> <strong>$18.00 USD</strong> </span>
+                                <p class="chield-unit2-p">$24.00 USD</p>
+                            </div>
+                        </label>
+                        <span class="most-popular">MOST POPULAR</span>
+
+                        <div class="hidden2 mt-1 row" id="sizeColorOptions2">
+                            <div class="col-md-1 col-1"></div>
+                            <div class="col-md-7 col-7 bginfo">
+                                <div class="col-md-6 col-6 select-box">
+                                    <span class="text">Size</span>
+                                    <div class="select-space">
+                                        <span>#1</span>
+                                        <select class="form-select d-inline">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="select-space mt-2">
+                                        <span>#2</span>
+                                        <select class="form-select d-inline">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6 select-box">
+                                    <span class="">Color</span>
+                                    <select class="form-select d-inline">
+                                        <option>Black</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                    </select>
+                                    <select class="form-select d-inline mt-2">
+                                        <option>Black</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-4 "></div>
+                        </div>
+                    </div>
+                    <!-- Unit 3 ------------------------------------------------------------------------------- -->
+                    <div class="offer-box3 selected3 selected" id="unit3">
+                        <label class="unit-section">
+                            <div class="chield-unit">
+                                <input type="radio" name="unitOption" value="21"
+                                    onclick="updatePrice(event, 21, '3 Unit')">
+                                <strong>3 Unit</strong> <span class="badge-discount " style="  position: absolute;
+            top: 5px;
+            left: 100px;">30% Off</span>
+                            </div>
+                            <div class="chield-unit2">
+                                <span class="float-end"> <strong>$18.00 USD</strong> </span>
+                                <p class="chield-unit2-p">$24.00 USD</p>
+                            </div>
+                        </label>
+
+                        <div class="hidden3 mt-1 row" id="sizeColorOptions3">
+                            <div class="col-md-1 col-1"></div>
+                            <div class="col-md-7 col-7 bginfo">
+                                <div class="col-md-6 col-6 select-box">
+                                    <span class="text">Size</span>
+                                    <div class="select-space">
+                                        <span>#1</span>
+                                        <select class="form-select d-inline">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="select-space mt-2">
+                                        <span>#2</span>
+                                        <select class="form-select d-inline">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6 select-box">
+                                    <span class="">Color</span>
+                                    <select class="form-select d-inline">
+                                        <option>Black</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                    </select>
+                                    <select class="form-select d-inline mt-2">
+                                        <option>Black</option>
+                                        <option>Red</option>
+                                        <option>Blue</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-4"></div>
+                        </div>
+                    </div>
+
+                    <p class="text-danger d-flex justify-content-between align-items-center">
+                        Free Delivery
+                        <span class="innerspanfootor text-dark">Total: <span id="totalPrice">$10.00 USD</span></span>
+                    </p>
+
+                    <button class="btn-add-to-cart">+ Add to Cart</button>
+                    <p class="text-dark d-flex justify-content-right align-items-center mt-2"
+                        style="margin-left: 320px; font-size:12px;">
+                        @ Powered by Pumper
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3"> </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice(event, price, unit) {
+            document.getElementById("totalPrice").innerText = `$${price}.00 USD`;
+
+            // Remove selection from all offer boxes
+            let offerBoxes1 = document.querySelectorAll(".offer-box1");
+            offerBoxes1.forEach(box1 => box1.classList.remove("selected1"));
+
+            //Unit Section One JavaScript Code 
+
+
+
+
+
+
+            let offerBoxes2 = document.querySelectorAll(".offer-box2");
+            offerBoxes2.forEach(box2 => box2.classList.remove("selected2"));
+
+            let offerBoxes3 = document.querySelectorAll(".offer-box3");
+            offerBoxes3.forEach(box3 => box3.classList.remove("selected3"));
+
+
+            //Unit Section One JavaScript Code 
+
+
+
+
+
+
+
+
+
+
+            let sizeColorOptions1 = document.getElementById("sizeColorOptions1");
+            sizeColorOptions1.classList.toggle("hidden1", unit !== "1 Unit");
+            // Add selected class to the clicked box
+            let selectedBox1 = event.target.closest(".offer-box1");
+            if (selectedBox1) {
+                selectedBox1.classList.add("selected1");
+            }
+
+
+            //Unit Section Two JavaScript Code 
+
+            // Add selected class to the clicked box
+            let selectedBox2 = event.target.closest(".offer-box2");
+            if (selectedBox2) {
+                selectedBox2.classList.add("selected2");
+            }
+
+            // Show dropdowns only for 2-unit option
+            let sizeColorOptions2 = document.getElementById("sizeColorOptions2");
+            sizeColorOptions2.classList.toggle("hidden2", unit !== "2 Unit");
+
+
+            //Unit Section Three JavaScript Code 
+
+            // Add selected class to the clicked box
+            let selectedBox3 = event.target.closest(".offer-box3");
+            if (selectedBox3) {
+                selectedBox3.classList.add("selected3");
+            }
+
+            // Show dropdowns only for 2-unit option
+            let sizeColorOptions3 = document.getElementById("sizeColorOptions3");
+            sizeColorOptions3.classList.toggle("hidden3", unit !== "3 Unit");
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
